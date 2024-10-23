@@ -1,0 +1,26 @@
+.themeColor {
+    background: rgb(104, 255, 184);
+    background: linear-gradient(0deg, rgba(104, 255, 184, 1) 0%, rgba(34, 193, 195, 1) 98%);
+
+    background: rgb(189, 148, 233);
+    background: linear-gradient(0deg, rgba(189, 148, 233, 1) 16%, rgba(188, 174, 238, 1) 100%);
+
+}
+
+.iiuc {
+    font-family: Arial;
+    font-stretch: expanded;
+    font-weight: bold;
+
+}
+
+.login-btn {
+    background: rgb(246, 224, 93);
+    background: linear-gradient(0deg, rgba(246, 224, 93, 1) 100%, rgba(233, 205, 148, 1) 100%, rgba(188, 174, 238, 1) 100%);
+}
+
+.card {
+    min-height: 300px; /* Set a minimum height for the cards */
+    max-width: 320px;  /* Set a maximum width to ensure uniform size */
+  }
+  

@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [
-    require('daisyui'),
-  ],
+  plugins: [require('daisyui')],  // Correct placement of daisyUI as a plugin
+  daisyui: {
+    themes: ["light"], // Set to light theme
+  },
 }
-
