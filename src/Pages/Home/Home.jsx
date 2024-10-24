@@ -1,10 +1,13 @@
+import About from "./About";
+import Banner from "./Banner";
+import Banner2 from "./Banner2";
 
 
 const Home = () => {
     return (
         <div>
-            <h2>Home</h2>
-            <h1>Welcome to Thesis/Project Portal</h1>
+            <Banner></Banner>
+            <About></About>
         </div>
     );
 };
