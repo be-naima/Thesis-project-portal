@@ -7,6 +7,62 @@
 
 }
 
+.bannerColor {
+    background: rgb(191, 190, 190);
+    background: linear-gradient(90deg, rgba(191, 190, 190, 1) 0%, rgba(255, 251, 251, 1) 90%);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Clicker+Script');
+
+
+
+.custom-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #7A5EAF;
+}
+
+.sub-heading {
+    font-family: "Clicker Script", cursive;
+    font-size: 1.25rem;
+    font-weight: bolder;
+    color: #000000;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-slideInRight {
+    animation: slideInRight 2.5s ease forwards;
+}
+
+.animate-slideInBottom {
+    animation: slideInBottom 2.5s ease forwards;
+}
+
+
+
 .iiuc {
     font-family: Arial;
     font-stretch: expanded;
@@ -20,7 +76,8 @@
 }
 
 .card {
-    min-height: 300px; /* Set a minimum height for the cards */
-    max-width: 320px;  /* Set a maximum width to ensure uniform size */
-  }
-  
+    min-height: 300px;
+    /* Set a minimum height for the cards */
+    max-width: 320px;
+    /* Set a maximum width to ensure uniform size */
+}

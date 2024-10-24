@@ -1,6 +1,5 @@
 import About from "./About";
 import Banner from "./Banner";
-import Banner2 from "./Banner2";
 
 
 const Home = () => {
