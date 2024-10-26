@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 
-import logo from '../../../assets/pictures/iiuc_logo.png';
-=======
-import React from 'react';
->>>>>>> c47f0ca9ab6949fc3e215204ca3893b96d736877
+//import logo from '../../../assets/pictures/iiuc_logo.png';
 import '../../../assets/custom css/custom.css';
 
 const Navbar = () => {
