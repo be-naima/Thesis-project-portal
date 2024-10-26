@@ -1,5 +1,8 @@
 import React from 'react';
 import '../../../assets/custom css/custom.css';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 
 const Navbar = () => {
     return (
@@ -24,7 +27,7 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content themeColor rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li className='font-bold text-blue-900 iiuc text-sm'><a>Home</a></li>
+                           <Link to="/"> <li className='font-bold text-blue-900 iiuc text-sm'><a>Home</a></li></Link>
                             <li className='font-bold text-blue-900 iiuc text-sm'>
                                 <a>Supervisors</a>
                                 <ul className="p-2">
@@ -40,7 +43,7 @@ const Navbar = () => {
                                     <li><a>Defence</a></li>
                                 </ul>
                             </li>
-                            <li className='font-bold text-blue-900 iiuc text-sm'><a>Previous Thesis</a></li>
+                          <Link to="/research"> <li className='font-bold text-blue-900 iiuc text-sm'><a>Research</a></li></Link> 
                         </ul>
                     </div>
                     <a className="flex flex-col items-center text-xl">
@@ -51,7 +54,7 @@ const Navbar = () => {
 
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li className='font-bold text-blue-900 iiuc text-sm'><a>Home</a></li>
+                       <Link to="/"> <li className='font-bold text-blue-900 iiuc text-sm'><a>Home</a></li></Link>
                         <li>
                             <details>
                                 <summary className='font-bold text-blue-900 iiuc text-sm'>Supervisors</summary>
@@ -71,7 +74,7 @@ const Navbar = () => {
                                 </ul>
                             </details>
                         </li>
-                        <li className='font-bold text-blue-900 iiuc text-sm'><a>Previous Thesis</a></li>
+                        <Link to="/research"> <li className='font-bold text-blue-900 iiuc text-sm'><a>Research</a></li></Link>
                     </ul>
                 </div>
 

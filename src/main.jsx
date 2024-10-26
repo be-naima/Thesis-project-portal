@@ -14,4 +14,6 @@ createRoot(document.getElementById('root')).render(
  </div>
 )
 
-{/*className='max-w-7xl mx-auto'*/}
+{/*className='max-w-7xl mx-auto'
+  cd ../../web/thesis-project portal client
+  */}
