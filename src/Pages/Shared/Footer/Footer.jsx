@@ -3,8 +3,8 @@ import { FaSquareInstagram } from "react-icons/fa6";
 
 const Footer = () => {
     return (
-        <div>
-            <footer className="footer footer-center themeColor text-base-content rounded p-10">
+        <div className="p-0 m-0 ">
+            <footer className="footer footer-center themeColor  text-base-content rounded p-10">
                 <nav className="grid grid-flow-col gap-4">
                     <a className="link link-hover font-bold text-blue-900">About us</a>
                     <a className="link link-hover font-bold text-blue-900">Supervisors</a>

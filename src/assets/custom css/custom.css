@@ -1,3 +1,4 @@
+
 .themeColor {
     background: rgb(104, 255, 184);
     background: linear-gradient(0deg, rgba(104, 255, 184, 1) 0%, rgba(34, 193, 195, 1) 98%);
@@ -14,7 +15,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Clicker+Script');
 
+.explore-thesis{
+    background: rgb(189, 148, 233);
+    background: linear-gradient(0deg, rgba(189, 148, 233, 1) 16%, rgba(188, 174, 238, 1) 100%);
 
+
+}
 
 .custom-heading {
     font-family: 'Poppins', sans-serif;
@@ -53,14 +59,63 @@
     }
 }
 
-.animate-slideInRight {
-    animation: slideInRight 2.5s ease forwards;
-}
 
-.animate-slideInBottom {
-    animation: slideInBottom 2.5s ease forwards;
-}
 
+
+  
+.announcement { 
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    align-items: center;
+    height: 40vh;
+    background-color: #f3e9e9; 
+    background-image: url('announcement.png'); 
+    background-size: cover; 
+    background-position: center;
+    padding-top: 100px;
+    padding-bottom: 300px;
+    text-align: center;
+  }
+
+  .date-button {
+    background-color: #ff6b6b; 
+    color: white;
+    font-size: 6vw;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;            
+    text-align: center;   
+  }
+
+  .thesis-date {
+    font-size: 8vw;
+    color: #325fa6; 
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif; 
+  }
+ 
+  
+  @media (min-width: 768px) {
+    .announcement {
+      flex-direction: row;
+      height: 20vh;
+    }
+  
+    .thesis-date {
+      font-size: 4vw;
+      margin-bottom: 0;
+    }
+  
+    .date-button {
+      font-size: 3vw;
+      margin-left: 20px;
+    }
+  }
+  
 
 
 .iiuc {
