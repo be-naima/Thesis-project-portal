@@ -1,5 +1,4 @@
 
-//import logo from '../../../assets/pictures/iiuc_logo.png';
 import '../../../assets/custom css/custom.css';
 import { Link } from 'react-router-dom';
 
@@ -48,7 +47,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <a className="flex flex-col items-center text-xl">
-                        <img src='iiuc_logo.png' alt="logo" className="w-14 h-14 mr-2" />
+                        <img src='/iiuc_logo.png' alt="logo" className="w-14 h-14 mr-2" />
                         {/*<h6 className="text-center font-extrabold text-blue-900 iiuc text-sm">International Islamic University <br /> Chittagong</h6>*/}
                     </a>
                 </div>

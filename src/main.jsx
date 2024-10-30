@@ -16,4 +16,5 @@ createRoot(document.getElementById('root')).render(
 
 {/*className='max-w-7xl mx-auto'
   cd ../../web/thesis-project portal client
+    cd ../../web/thesis-project-portal-server
   */}
