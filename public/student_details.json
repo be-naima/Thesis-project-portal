@@ -1,0 +1,26 @@
+[
+    {
+       
+        "name": "Naima Fardous",
+        "studentID": "C201217",
+        "gender": "Female",
+        "email": "c201217@ugrad.iiuc.ac.bd",
+        "address": "Halishahar, Chittagong",
+        "department": "CSE",
+        "dateOfBirth": "30-10-2000",
+        "phoneNumber": "01875739907",
+        "batch": "50"
+      },
+      {
+        
+        "name": "Nirjana Barua",
+        "studentID": "C201208",
+        "gender": "Female",
+        "email": "c201208@ugrad.iiuc.ac.bd",
+        "address": "Chokbazar, Chittagong",
+        "department": "CSE",
+        "dateOfBirth": "27-07-2000",
+        "phoneNumber": "01875739907",
+        "batch": "50"
+      }
+]

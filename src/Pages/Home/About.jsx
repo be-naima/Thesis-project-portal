@@ -22,7 +22,8 @@ const About = () => {
                
 
                     <div className="image-content md:w-1/2 flex justify-center">
-                    <div className="relative">
+                    <Slide direction="up">
+                    <div className="relative"> 
                         <img
                             className="rounded-full shadow-lg w-64 h-80 object-cover"
                             src="/images/thesis.jpg"
@@ -33,7 +34,8 @@ const About = () => {
                             src="/images/bulb.jpg"
                             alt="Bulb"
                         />
-                    </div>
+                    </div> 
+                    </Slide>
                 </div>
             </section>
         </div>
