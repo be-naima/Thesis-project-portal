@@ -1,0 +1,21 @@
+[
+    {
+        
+        "name": "Mohammed Safiullah",
+        "designation": "Assistant Professor",
+        "qualification": ["B.Sc. in CSE KU"," M.Sc. IIUC"],
+        "dept": "CSE",
+        "phone": "01711304565",
+        "email": "safiullah@gmail.com"
+    },
+    {
+        
+        "name": "Dr. Mohammad Aman Ullah",
+        "designation": "Associate Professor",
+        "qualification": ["PhD in Science and Technology","MSc in CSE"," BSc in CSE"],
+        "dept": "CSE",
+        "phone": " 01815641524",
+        "email": "ullah047@yahoo.com"
+    }
+
+]

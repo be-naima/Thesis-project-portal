@@ -1,6 +1,6 @@
 [
   {
-    "id": "T001",
+    "team": "T1",
     "title": "AI-Based Diagnostics for Healthcare",
     "abstract": "This study explores AI models to diagnose diseases with improved accuracy, utilizing deep learning on medical imaging datasets.",
     "student_ids": [
@@ -29,7 +29,7 @@
     "defense_status": "Pending"
   },
   {
-    "id": "P002",
+    "team": "T2",
     "title": "Blockchain Solutions in Supply Chain",
     "abstract": "An exploration of blockchain's potential to improve transparency and traceability in supply chain management.",
     "student_ids": [
@@ -58,36 +58,7 @@
     "defense_status": "Accepted"
   },
   {
-    "id": "T003",
-    "title": "Thesis/Project Portal System'",
-    "abstract": "The Thesis/Project Portal System streamlines the submission, review, and approval processes for academic theses and projects, enhancing collaboration between students, supervisors, and administrative boards.",
-    "student_ids": [
-      "C201208",
-      "C201217"
-    ],
-    "student_name": [
-      "Nirjana Sultana",
-      "Naima Sultana"
-    ],
-    "supervisor": "Mohammad Shafiullah",
-    "defence": "/thesis_3.pdf",
-    "completed": false,
-    "type": "Project",
-    "dept": "CSE",
-    "year_of_Completion": 2024,
-    "area_of_research": "Web Development",
-    "proposal_board": "Board-1",
-    "proposal_date": "14-09-24",
-    "proposal_status": "Accepted",
-    "pre_defense_board": "Board-1",
-    "pre_defense_date": "16-09-24",
-    "pre_defense_status": "Pending",
-    "defense_board": "Pending",
-    "defense_date": "Pending",
-    "defense_status": "Pending"
-  },
-  {
-    "id": "P004",
+    "team": "T3",
     "title": "E-Learning Platform with Gamification",
     "abstract": "A web-based e-learning platform that incorporates gamification to enhance student engagement and learning outcomes.",
     "student_ids": [
@@ -116,7 +87,7 @@
     "defense_status": "Accepted"
   },
   {
-    "id": "T005",
+    "team": "T4",
     "title": "Smart City Traffic Management System",
     "abstract": "A study on implementing IoT-based smart traffic management solutions to reduce congestion in urban areas.",
     "student_ids": [
@@ -145,7 +116,7 @@
     "defense_status": "Pending"
   },
   {
-    "id": "P006",
+    "team": "T5",
     "title": "Renewable Energy Forecasting using Machine Learning",
     "abstract": "This project applies ML algorithms to predict renewable energy outputs based on historical data.",
     "student_ids": [
@@ -174,7 +145,7 @@
     "defense_status": "Accepted"
   },
   {
-    "id": "T007",
+    "team": "T6",
     "title": "Telemedicine Solutions for Remote Areas",
     "abstract": "A research study on telemedicine platforms that enhance healthcare access in rural areas.",
     "student_ids": [
@@ -203,7 +174,7 @@
     "defense_status": "Accepted"
   },
   {
-    "id": "P008",
+    "team": "T7",
     "title": "Secure E-Commerce Application",
     "abstract": "Development of a secure e-commerce platform with enhanced encryption and fraud detection mechanisms.",
     "student_ids": [
