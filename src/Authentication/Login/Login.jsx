@@ -1,12 +1,72 @@
+import { useContext, useRef, useState } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { sendPasswordResetEmail } from "firebase/auth";
+
+import { useNavigate } from "react-router-dom";
+import auth from "../../Firebase/firebase.config";
 
 
 const Login = () => {
+
+    const { loginUser, signInWithGoogle } = useContext(AuthContext)
+    const emailRef = useRef(null);
+    
+    
+    const handleLoginbtn = e => {
+
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, password);
+
+        loginUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                navigate('/');
+               
+            })
+            .catch(error => {
+                console.log(error);
+                alert('Incorrect email or password');
+            })
+    }
+
+    //sign in with google
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+                navigate('/');
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const handleForgetPass = () => {
+        const email = emailRef.current.value;
+        if (!email) {
+            alert("Please enter your email address first.");
+            return;
+        }
+        console.log('send reset email', emailRef.current.value)
+        sendPasswordResetEmail(auth, email)
+            .then( alert("Please check your email."))
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    
+    const navigate = useNavigate();
+    const handleSignup = () => {
+        navigate('/signup');
+    }
     return (
         <div className="flex justify-center items-center min-h-screen background-image">
             <div className="w-full max-w-md p-6 bg-gray rounded-lg ">
-                <h2 className="text-3xl font-bold text-center mb-2 text-purple-600">Thesis/Project Portal</h2>
-                <h2 className="text-2xl font-bold text-center mb-2 text-purple-600">LOGIN FORM</h2>
-                <form className="space-y-6">
+                <h2 className="text-3xl font-bold text-center mb-2 text-white">Thesis/Project Portal</h2>
+                <h2 className="text-2xl font-bold text-center mb-2 text-white">LOGIN FORM</h2>
+                <form onSubmit={handleLoginbtn}className="space-y-6">
                     <div>
                         <label className="block text-sm font-medium">
                             Email address
@@ -35,10 +95,13 @@ const Login = () => {
                     >
                         Login
                     </button>
+                    <a onClick={handleForgetPass} href="#!" className="block mt-6 text-sm text-white hover:underline text-center">
+                        Forgot password?
+                    </a>
                     <div className="text-center">
-                        <p className="text-sm">
+                        <p className="text-sm text-white">
                             Don't have an account?{" "}
-                            <a href="#" className="text-purple-600 hover:underline" >
+                            <a onClick={handleSignup} href="#" className="text-purple-600 hover:underline" >
                                 SignUp
                             </a>
                         </p>
@@ -52,7 +115,8 @@ const Login = () => {
                 </div>
 
                 <div className="space-y-3">
-                    <button 
+                    <button
+                       onClick={handleGoogleSignIn}
                         type="button"
                         className="w-full py-2 px-4 border rounded-lg flex items-center justify-center space-x-3 bg-gray-50 hover:bg-purple-200"
                     >
