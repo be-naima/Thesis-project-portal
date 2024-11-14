@@ -18,6 +18,7 @@ const SelectSupervisor = () => {
         .then(data => {
           console.log("Student Details:", data);
           setStudent(data);
+          setSelectedSupervisors(data.selected_supervisors || []);
         })
         .catch(error => {
           console.error("Error fetching student details:", error);
@@ -29,12 +30,13 @@ const SelectSupervisor = () => {
 
   useEffect(() => {
     const fetchAndFilterSupervisors = () => {
-      fetch('/supervisors_list.json')
+      fetch(`http://localhost:5000/instructor_details`)
         .then(response => response.json())
         .then(data => {
+          console.log("Fetched Supervisors Data:", data);
           const eligibleSupervisors = data.filter(supervisor =>
             supervisor.availability > 0 &&
-            supervisor.Department === student?.department &&
+            supervisor.department === student?.department &&
             student?.cg >= supervisor.minCGPA
           );
           setSupervisors(eligibleSupervisors);
@@ -49,19 +51,36 @@ const SelectSupervisor = () => {
     }
   }, [student]);
 
+
+
   // Handle supervisor selection
-  const handleSelect = (supervisor) => {
-    if (selectedSupervisors.length < 2) {
-      setSelectedSupervisors(prev => [...prev, supervisor]);
+  const handleSelect = async (supervisor) => {
+    if (selectedSupervisors.length < 2 && !selectedSupervisors.some(sup => sup._id === supervisor._id)) {
+      try {
+        const response = await fetch(`http://localhost:5000/student_details/${user.student_id}/select-supervisor`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ supervisorId: supervisor._id }),
+        });
+
+        if (response.ok) {
+          setSelectedSupervisors((prev) => [...prev, supervisor]); // Add supervisor to state
+          alert('Supervisor selected successfully');
+        } else {
+          const data = await response.json();
+          alert(data.message || 'Failed to select supervisor');
+        }
+      } catch (error) {
+        console.error('Error selecting supervisor:', error);
+        alert('Error selecting supervisor');
+      }
     } else {
       alert('You can only select 2 supervisors!');
     }
   };
 
-  // Handle unselecting a supervisor
-  const handleUnselect = (supervisorId) => {
-    setSelectedSupervisors(prev => prev.filter(sup => sup.id !== supervisorId));
-  };
+
+
 
   return (
     <div className="mx-auto bg-gray-100 h-[800px] overflow-auto">
@@ -81,27 +100,21 @@ const SelectSupervisor = () => {
             </thead>
             <tbody>
               {supervisors.map((supervisor, index) => (
-                <tr key={supervisor.id}>
+                <tr key={supervisor._id}>
                   <td className="px-4 py-2 border">{index + 1}</td>
-                  <td className="px-4 py-2 border">{supervisor.Name}</td>
-                  <td className="px-4 py-2 border">{supervisor.Department}</td>
-                  <td className="px-4 py-2 border">{supervisor.Email}</td>
-                  <td className="px-4 py-2 border">{supervisor.Phone}</td>
+                  <td className="px-4 py-2 border">{supervisor.name}</td>
+                  <td className="px-4 py-2 border">{supervisor.department}</td>
+                  <td className="px-4 py-2 border">{supervisor.email}</td>
+                  <td className="px-4 py-2 border">{supervisor.phone}</td>
                   <td className="px-4 py-2 border text-center">
                     <button
-                      className={`px-2 py-1 ${selectedSupervisors.some((sup) => sup.id === supervisor.id) ? 'bg-green-500' : 'bg-purple-500'} text-white rounded hover:bg-purple-600`}
-                      onClick={() =>
-                        selectedSupervisors.some((sup) => sup.id === supervisor.id)
-                          ? handleUnselect(supervisor.id)
-                          : handleSelect(supervisor)
-                      }
-                      disabled={selectedSupervisors.some((sup) => sup.id === supervisor.id)}
+                      className={`px-2 py-1 ${selectedSupervisors.some((sup) => sup._id === supervisor._id)
+                        ? 'bg-green-500 text-white rounded hover:bg-green-600'
+                        : 'bg-purple-500 text-white rounded hover:bg-purple-600'}`}
+                      onClick={() => {handleSelect(supervisor)}}
                     >
-                      {selectedSupervisors.some((sup) => sup.id === supervisor.id)
-                        ? 'Selected'
-                        : 'Select'}
+                      {selectedSupervisors.some((sup) => sup._id === supervisor._id) ? 'Selected' : 'Select'}
                     </button>
-                    
                   </td>
                 </tr>
               ))}

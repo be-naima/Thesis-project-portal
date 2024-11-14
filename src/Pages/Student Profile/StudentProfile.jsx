@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PersonalDetails from './PersonalDetails';
 import EditProfile from './EditProfile';
-import MemberRequests from './MemberRequests';
+import MyTeam from './MyTeam';
 import SelectedBoard from './SelectedBoard';
 import { FaBars } from 'react-icons/fa6';
 
@@ -12,8 +12,8 @@ const StudentProfile = () => {
     switch (currentPage) {
       case 'EditProfile':
         return <EditProfile />;
-      case 'MemberRequests':
-        return <MemberRequests />;
+      case 'MyTeam':
+        return <MyTeam />;
       case 'SelectedBoard':
         return <SelectedBoard />;
       default:
@@ -51,8 +51,8 @@ const StudentProfile = () => {
             </button>
           </li>
           <li>
-            <button onClick={() => setCurrentPage('MemberRequests')} className="w-full text-left">
-              Member Requests
+            <button onClick={() => setCurrentPage('MyTeam')} className="w-full text-left">
+            My Team
             </button>
           </li>
           <li>

@@ -7,7 +7,9 @@ import PreviousThesis from "../Pages/AllResearch/AllResearch";
 import StudentProfile from "../Pages/Student Profile/StudentProfile";
 import Login from "../Authentication/Login/Login";
 import SignUp from "../Authentication/SignUp/SignUp";
-
+import InstructorProfile from "../Pages/Instructor Profile/InstructorProjile";
+import AdminDashboard from "../Pages/AdminDashboard/AdminDashboard";
+import AdminLogin from "../Pages/AdminDashboard/AdminLogin";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: `/studentprofile/:student_id`,//route will be dynamic change 
         element: <StudentProfile></StudentProfile>
+      },
+      {
+        path: `/instructorprofile/:_id`,
+        element: <InstructorProfile></InstructorProfile>
       },
       {
         path: '/login',
@@ -46,9 +52,23 @@ const router = createBrowserRouter([
             element: <MySupervisor></MySupervisor>
           }
         ]
-      }
+      },
+
     ]
   },
+  {
+    path: "admin-dashboard",
+    element: <AdminDashboard></AdminDashboard>,
+    children: [
+      {
+       
+      }
+    ]
+
+  }
 ]);
+
+
+
 
 export default router;
