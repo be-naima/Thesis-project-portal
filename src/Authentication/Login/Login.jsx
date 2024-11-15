@@ -10,25 +10,43 @@ const Login = () => {
 
     const { loginUser, signInWithGoogle } = useContext(AuthContext)
     const emailRef = useRef(null);
-    
-    
+
+
     const handleLoginbtn = e => {
 
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
-
-        loginUser(email, password)
-            .then(result => {
-                console.log(result.user);
-                navigate('/');
-               
+        //check if admin
+        fetch('http://localhost:5000/admin_details', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.isAdmin) {
+                    
+                    navigate('/admin-dashboard');
+                } else {
+                    
+                    loginUser(email, password)
+                        .then(result => {
+                            console.log(result.user);
+                            navigate('/');
+                        })
+                        .catch(error => {
+                            console.error('Firebase Login Error:', error);
+                            alert('Incorrect email or password');
+                        });
+                }
             })
             .catch(error => {
-                console.log(error);
-                alert('Incorrect email or password');
-            })
+                console.error('Error during admin login:', error);
+            });
+
     }
 
     //sign in with google
@@ -51,12 +69,12 @@ const Login = () => {
         }
         console.log('send reset email', emailRef.current.value)
         sendPasswordResetEmail(auth, email)
-            .then( alert("Please check your email."))
+            .then(alert("Please check your email."))
             .catch(error => {
                 console.log(error);
             })
     }
-    
+
     const navigate = useNavigate();
     const handleSignup = () => {
         navigate('/signup');
@@ -66,7 +84,7 @@ const Login = () => {
             <div className="w-full max-w-md p-6 bg-gray rounded-lg ">
                 <h2 className="text-3xl font-bold text-center mb-2 text-white">Thesis/Project Portal</h2>
                 <h2 className="text-2xl font-bold text-center mb-2 text-white">LOGIN FORM</h2>
-                <form onSubmit={handleLoginbtn}className="space-y-6">
+                <form onSubmit={handleLoginbtn} className="space-y-6">
                     <div>
                         <label className="block text-sm font-medium">
                             Email address
@@ -116,7 +134,7 @@ const Login = () => {
 
                 <div className="space-y-3">
                     <button
-                       onClick={handleGoogleSignIn}
+                        onClick={handleGoogleSignIn}
                         type="button"
                         className="w-full py-2 px-4 border rounded-lg flex items-center justify-center space-x-3 bg-gray-50 hover:bg-purple-200"
                     >
