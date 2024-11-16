@@ -8,48 +8,11 @@ import StudentProfile from "../Pages/Student Profile/StudentProfile";
 import Login from "../Authentication/Login/Login";
 import SignUp from "../Authentication/SignUp/SignUp";
 import InstructorProfile from "../Pages/Instructor Profile/InstructorProjile";
-<<<<<<< HEAD
 import SubmitProposal from "../Pages/Submissions/SubmitProposal";
 import SubmitPreDefence from "../Pages/Submissions/SubmitPreDefence";
 import SubmitDefence from "../Pages/Submissions/SubmitDefence";
 
-const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      children:[
-        {
-            path:'/',
-            element: <Home></Home>
-        },
-        {
-          path:'/research',
-          element: <PreviousThesis></PreviousThesis>
-        },
-        {
-          path:`/studentprofile/:student_id`,
-          element: <StudentProfile></StudentProfile>
-        },
-        {
-          path:`/instructorprofile/:_id`,
-          element: <InstructorProfile></InstructorProfile>
-        },
-        {
-          path:`/submitproposal/:student_id`,
-          element: <SubmitProposal></SubmitProposal>
-        },
-        {
-          path:`/submitpre_defence/:student_id`,
-          element: <SubmitPreDefence></SubmitPreDefence>
-        },
-        {
-          path:`/submit_defence/:student_id`,
-          element: <SubmitDefence></SubmitDefence>
-        },
-      ]
-    },
-  ]);
-=======
+
 import AdminDashboard from "../Pages/AdminDashboard/AdminDashboard";
 import AdminLogin from "../Pages/AdminDashboard/AdminLogin";
 
@@ -75,6 +38,18 @@ const router = createBrowserRouter([
         element: <InstructorProfile></InstructorProfile>
       },
       {
+        path:`/submitproposal/:student_id`,
+        element: <SubmitProposal></SubmitProposal>
+      },
+      {
+        path:`/submitpre_defence/:student_id`,
+        element: <SubmitPreDefence></SubmitPreDefence>
+      },
+      {
+        path:`/submit_defence/:student_id`,
+        element: <SubmitDefence></SubmitDefence>
+      },
+      {
         path: '/login',
         element: <Login></Login>
       },
@@ -90,12 +65,11 @@ const router = createBrowserRouter([
             element: <SelectSupervisor></SelectSupervisor>
           },
           {
-            path: 'my-supervisor',
+            path: '/supervisors/my-supervisor/:student_id',
             element: <MySupervisor></MySupervisor>
           }
         ]
       },
->>>>>>> b87dd4c8d9625835ccac3ac6a1bdd1522c5825fe
 
     ]
   },
