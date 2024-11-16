@@ -1,13 +1,14 @@
 
 import '../../../assets/custom css/custom.css';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
 
 const Navbar = () => {
+    const { student_id } = useParams();
     return (
-        <div className="w-full themeColor fixed top-0 left-0 z-50"> 
-            <div className="navbar max-w-7xl mx-auto"> 
+        <div className="w-full themeColor fixed top-0 left-0 z-50">
+            <div className="navbar max-w-7xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,7 +28,7 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content themeColor rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                           <Link to="/"> <li className='font-bold text-blue-900 iiuc text-sm'><a>Home</a></li></Link>
+                            <Link to="/"> <li className='font-bold text-blue-900 iiuc text-sm'><a>Home</a></li></Link>
                             <li className='font-bold text-blue-900 iiuc text-sm'>
                                 <a>Supervisors</a>
                                 <ul className="p-2">
@@ -38,12 +39,18 @@ const Navbar = () => {
                             <li className='font-bold text-blue-900 iiuc text-sm'>
                                 <a>Submissions</a>
                                 <ul className="p-2">
-                                    <li><a>Submit Proposal</a></li>
-                                    <li><a>Pre-Defence</a></li>
-                                    <li><a>Defence</a></li>
+                                    <Link to={`/submitproposal/${student_id}`}>
+                                        <li><a>Submit Proposal</a></li>
+                                    </Link>
+                                    <Link to={`/submitpre_defence/${student_id}`}>
+                                        <li><a>Pre Defence</a></li>
+                                    </Link>
+                                    <Link to={`/submit_defence/${student_id}`}>
+                                        <li><a>Defence</a></li>
+                                    </Link>
                                 </ul>
                             </li>
-                          <Link to="/research"> <li className='font-bold text-blue-900 iiuc text-sm'><a>Research</a></li></Link> 
+                            <Link to="/research"> <li className='font-bold text-blue-900 iiuc text-sm'><a>Research</a></li></Link>
                         </ul>
                     </div>
                     <a className="flex flex-col items-center text-xl">
@@ -54,7 +61,7 @@ const Navbar = () => {
 
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                       <Link to="/"> <li className='font-bold text-blue-900 iiuc text-sm'><a>Home</a></li></Link>
+                        <Link to="/"> <li className='font-bold text-blue-900 iiuc text-sm'><a>Home</a></li></Link>
                         <li>
                             <details>
                                 <summary className='font-bold text-blue-900 iiuc text-sm'>Supervisors</summary>
@@ -68,9 +75,15 @@ const Navbar = () => {
                             <details>
                                 <summary className='font-bold text-blue-900 iiuc text-sm'>Submissions</summary>
                                 <ul className="p-2 ">
-                                    <li><a>Submit Proposal</a></li>
-                                    <li><a>Pre-Defence</a></li>
-                                    <li><a>Defence</a></li>
+                                    <Link to={`/submitproposal/${student_id}`}>
+                                        <li><a>Submit Proposal</a></li>
+                                    </Link>
+                                    <Link to={`/submitpre_defence/${student_id}`}>
+                                        <li><a>Pre Defence</a></li>
+                                    </Link>
+                                    <Link to={`/submit_defence/${student_id}`}>
+                                        <li><a>Defence</a></li>
+                                    </Link>
                                 </ul>
                             </details>
                         </li>

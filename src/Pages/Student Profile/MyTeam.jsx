@@ -115,7 +115,7 @@ const MyTeam = () => {
   return (
     <div className="p-6 bg-gray-100 rounded shadow max-w-md mx-auto md:max-w-lg lg:max-w-xl">
       <div className="mb-6 text-center">
-        <h2 className="text-xl font-bold text-purple-800 mb-5">My Team</h2>
+        <h2 className="text-xl font-bold text-purple-800 mb-5">My Team: {team}</h2>
         <div className="flex flex-col md:flex-row gap-2 items-center justify-center">
           <input
             type="text"

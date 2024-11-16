@@ -4,6 +4,9 @@ import Home from "../Pages/Home/Home";
 import PreviousThesis from "../Pages/AllResearch/AllResearch";
 import StudentProfile from "../Pages/Student Profile/StudentProfile";
 import InstructorProfile from "../Pages/Instructor Profile/InstructorProjile";
+import SubmitProposal from "../Pages/Submissions/SubmitProposal";
+import SubmitPreDefence from "../Pages/Submissions/SubmitPreDefence";
+import SubmitDefence from "../Pages/Submissions/SubmitDefence";
 
 const router = createBrowserRouter([
     {
@@ -25,7 +28,19 @@ const router = createBrowserRouter([
         {
           path:`/instructorprofile/:_id`,
           element: <InstructorProfile></InstructorProfile>
-        }
+        },
+        {
+          path:`/submitproposal/:student_id`,
+          element: <SubmitProposal></SubmitProposal>
+        },
+        {
+          path:`/submitpre_defence/:student_id`,
+          element: <SubmitPreDefence></SubmitPreDefence>
+        },
+        {
+          path:`/submit_defence/:student_id`,
+          element: <SubmitDefence></SubmitDefence>
+        },
       ]
     },
   ]);

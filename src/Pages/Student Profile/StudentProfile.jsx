@@ -4,6 +4,7 @@ import EditProfile from './EditProfile';
 import MyTeam from './MyTeam';
 import SelectedBoard from './SelectedBoard';
 import { FaBars } from 'react-icons/fa6';
+import MyProgress from './MyProgress';
 
 const StudentProfile = () => {
   const [currentPage, setCurrentPage] = useState('PersonalDetails');
@@ -16,6 +17,8 @@ const StudentProfile = () => {
         return <MyTeam />;
       case 'SelectedBoard':
         return <SelectedBoard />;
+      case 'MyProgress':
+        return <MyProgress></MyProgress>
       default:
         return <PersonalDetails />;
     }
@@ -58,6 +61,11 @@ const StudentProfile = () => {
           <li>
             <button onClick={() => setCurrentPage('SelectedBoard')} className="w-full text-left">
               Selected Board
+            </button>
+          </li>
+          <li>
+            <button onClick={() => setCurrentPage('MyProgress')} className="w-full text-left">
+             My Progress
             </button>
           </li>
         </ul>
