@@ -11,6 +11,6 @@ const Main = () => {
             <Footer></Footer>
         </div>
     );
-};
+};                                                       
 
 export default Main;

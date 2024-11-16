@@ -136,3 +136,9 @@
     max-width: 320px;
     /* Set a maximum width to ensure uniform size */
 }
+.background-image {
+    background-image: url('/images/thesisreg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

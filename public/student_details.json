@@ -9,7 +9,9 @@
         "department": "CSE",
         "dateOfBirth": "30-10-2000",
         "phoneNumber": "01875739907",
-        "batch": "50"
+        "batch": "50",
+        "cg": 3.4,
+        "selectedSupervisors": []
       },
       {
         
@@ -21,6 +23,8 @@
         "department": "CSE",
         "dateOfBirth": "27-07-2000",
         "phoneNumber": "01875739907",
-        "batch": "50"
+        "batch": "50",
+        "cg": 3.35,
+        "selectedSupervisors": []
       }
 ]

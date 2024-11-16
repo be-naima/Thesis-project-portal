@@ -11,7 +11,7 @@ const AllResarch = () => {
   const [showTypeDropdown, setShowTypeDropdown] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 7; 
-
+  
   useEffect(() => {
     fetch('/thesisdetail.json')
       .then(response => response.json())

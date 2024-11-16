@@ -1,0 +1,92 @@
+[
+  {
+    "id": "sup01",
+    "Name": "Dr. Mohammad Aman Ullah",
+    "Department": "CSE",
+    "Email": "ullah047@yahoo.com",
+    "Phone": "+8801815641524",
+    "availability": 5,
+    "minCGPA": 3.5
+  },
+  {
+    "id": "sup02",
+    "Name": "Md. Mahiuddin",
+    "Department": "CSE",
+    "Email": "mmuict@gmail.com",
+    "Phone": "+8801960279300",
+    "availability": 4,
+    "minCGPA": 3.5
+  },
+  {
+    "id": "sup03",
+    "Name": "Zinia Sultana Mukti",
+    "Department": "CSE",
+    "Email": "zinniaiiuc@yahoo.com",
+    "Phone": "01716432134",
+    "availability": 3,
+    "minCGPA": 3.0
+  },
+  {
+    "id": "sup04",
+    "Name": "Prof. Mohammed Shamsul Alam",
+    "Department": "CSE",
+    "Email": "alam_cse@yahoo.com",
+    "Phone": "01711941680",
+    "availability": 5,
+    "minCGPA": 3.5
+  },
+  {
+    "id": "sup05",
+    "Name": "Mohammed Safiullah",
+    "Department": "CSE",
+    "Email": "safiullah@gmail.com",
+    "Phone": "01711304565",
+    "availability": 4,
+    "minCGPA": 3.0
+  },
+  {
+    "id": "sup06",
+    "Name": "Prof. Dr. Md. Monirul Islam",
+    "Department": "CSE",
+    "Email": "monirliton@yahoo.com",
+    "Phone": "01711701719",
+    "availability": 3,
+    "minCGPA": 3.5
+  },
+  {
+    "id": "sup07",
+    "Name": "Mahadi Hassan",
+    "Department": "CSE",
+    "Email": "mahadi_cse@yahoo.com",
+    "Phone": "01957719040",
+    "availability": 4,
+    "minCGPA": 3.0
+  },
+  {
+    "id": "sup08",
+    "Name": "Subrina Akter",
+    "Department": "CSE",
+    "Email": "subrina.a30@gmail.com",
+    "Phone": "01817751583",
+    "availability": 5,
+    "minCGPA": 3.0
+  },
+  {
+    "id": "sup09",
+    "Name": "Farzana Tasnim",
+    "Department": "CSE",
+    "Email": "farzanatasnim34@gmail.com",
+    "Phone": "01521487508",
+    "availability": 4,
+    "minCGPA": 3.0
+  },
+  {
+    "id": "sup10",
+    "Name": "Shefayatuj Johara Chowdhury",
+    "Department": "CSE",
+    "Email": "shefaya61@gmail.com",
+    "Phone": "01984696037",
+    "availability": 3,
+    "minCGPA": 3.0
+  }
+]
