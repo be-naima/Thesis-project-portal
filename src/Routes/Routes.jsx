@@ -12,9 +12,9 @@ import SubmitProposal from "../Pages/Submissions/SubmitProposal";
 import SubmitPreDefence from "../Pages/Submissions/SubmitPreDefence";
 import SubmitDefence from "../Pages/Submissions/SubmitDefence";
 
-
 import AdminDashboard from "../Pages/AdminDashboard/AdminDashboard";
 import AdminLogin from "../Pages/AdminDashboard/AdminLogin";
+import ManageBoard from "../Pages/AdminDashboard/ManageBoard";
 
 const router = createBrowserRouter([
   {
@@ -22,66 +22,66 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       {
-        path: '/',
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path: '/research',
-        element: <PreviousThesis></PreviousThesis>
+        path: "/research",
+        element: <PreviousThesis></PreviousThesis>,
       },
       {
-        path: `/studentprofile/:student_id`,//route will be dynamic change 
-        element: <StudentProfile></StudentProfile>
+        path: `/studentprofile/:student_id`, 
+        element: <StudentProfile></StudentProfile>,
       },
       {
         path: `/instructorprofile/:_id`,
-        element: <InstructorProfile></InstructorProfile>
+        element: <InstructorProfile></InstructorProfile>,
       },
       {
-        path:`/submitproposal/:student_id`,
-        element: <SubmitProposal></SubmitProposal>
+        path: `/submitproposal/:student_id`,
+        element: <SubmitProposal></SubmitProposal>,
       },
       {
-        path:`/submitpre_defence/:student_id`,
-        element: <SubmitPreDefence></SubmitPreDefence>
+        path: `/submitpre_defence/:student_id`,
+        element: <SubmitPreDefence></SubmitPreDefence>,
       },
       {
-        path:`/submit_defence/:student_id`,
-        element: <SubmitDefence></SubmitDefence>
+        path: `/submit_defence/:student_id`,
+        element: <SubmitDefence></SubmitDefence>,
       },
       {
-        path: '/login',
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/signup',
-        element: <SignUp></SignUp>
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
       {
-        path: '/supervisors',
+        path: "/supervisors",
         children: [
           {
             path: `select-supervisor/:student_id`,
-            element: <SelectSupervisor></SelectSupervisor>
+            element: <SelectSupervisor></SelectSupervisor>,
           },
           {
-            path: '/supervisors/my-supervisor/:student_id',
-            element: <MySupervisor></MySupervisor>
-          }
-        ]
+            path: "/supervisors/my-supervisor/:student_id",
+            element: <MySupervisor></MySupervisor>,
+          },
+        ],
       },
-
-    ]
+    ],
   },
   {
     path: "admin-dashboard",
-    element: <AdminDashboard></AdminDashboard>
-    
-
-  }
+    element: <AdminDashboard></AdminDashboard>,
+    children: [
+      {
+        path: "manage-board",
+        element: <ManageBoard></ManageBoard>, 
+      },
+    ],
+  },
 ]);
-
-
-
 
 export default router;

@@ -109,8 +109,8 @@ const Navbar = () => {
                             </Link>
                         </ul>
                     </div>
-
-                    {user && (
+                    
+                    {user ? (
                         <div className="flex items-center justify-center">
                             <img
                                 src={user.photoURL || "/images/default-avatar.png"}
@@ -138,7 +138,10 @@ const Navbar = () => {
                                 </div>
                             )}
                         </div>
-                    )}
+                    ):(<div className="">
+                        <Link to="/login" className="btn login-btn btn-sm me-2">Login</Link>
+                        <Link to="/signup" className="btn login-btn btn-sm">SignUp</Link>
+                    </div>)}
                 </div>
             </div>
 
