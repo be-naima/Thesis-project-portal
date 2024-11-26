@@ -8,8 +8,9 @@ import StudentProfile from "../Pages/Student Profile/StudentProfile";
 import Login from "../Authentication/Login/Login";
 import SignUp from "../Authentication/SignUp/SignUp";
 import InstructorProfile from "../Pages/Instructor Profile/InstructorProjile";
-import AdminDashboard from "../Pages/AdminDashboard/AdminDashboard";
-import AdminLogin from "../Pages/AdminDashboard/AdminLogin";
+
+
+import AdminDashboard from "../Pages/AdminDashboard/AdminHome/AdminDashboard";
 
 const router = createBrowserRouter([
   {
