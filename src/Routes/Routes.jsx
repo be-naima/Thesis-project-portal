@@ -15,6 +15,7 @@ import SubmitDefence from "../Pages/Submissions/SubmitDefence";
 import AdminDashboard from "../Pages/AdminDashboard/AdminDashboard";
 import AdminLogin from "../Pages/AdminDashboard/AdminLogin";
 import ManageBoard from "../Pages/AdminDashboard/ManageBoard";
+import Board from "../Pages/Board/Board";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "board/:boardName",
+    element: <Board></Board>,
+  }
 ]);
 
 export default router;

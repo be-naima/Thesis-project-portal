@@ -113,7 +113,7 @@ const Navbar = () => {
                     {user ? (
                         <div className="flex items-center justify-center">
                             <img
-                                src={user.photoURL || "/images/default-avatar.png"}
+                                src={ "/images/default-avatar.png"}
                                 alt="User Profile"
                                 onClick={toggleProfileMenu} 
                                 className="w-10 h-10 rounded-full cursor-pointer"

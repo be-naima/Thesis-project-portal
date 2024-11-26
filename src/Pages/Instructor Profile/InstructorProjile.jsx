@@ -54,11 +54,7 @@ const InstructorProfile = () => {
                             Edit Profile
                         </button>
                     </li>
-                    <li>
-                        <button onClick={() => setCurrentPage('StudentRequests')} className="w-full text-left">
-                        Student Requests
-                        </button>
-                    </li>
+                   
                     <li>
                         <button onClick={() => setCurrentPage('ViewBoard')} className="w-full text-left">
                         View Board
