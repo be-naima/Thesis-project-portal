@@ -16,6 +16,7 @@ import AdminDashboard from "../Pages/AdminDashboard/AdminDashboard";
 import AdminLogin from "../Pages/AdminDashboard/AdminLogin";
 import ManageBoard from "../Pages/AdminDashboard/ManageBoard";
 import Board from "../Pages/Board/Board";
+import AllThesis from "../Pages/AdminDashboard/AllThesis";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
         element: <PreviousThesis></PreviousThesis>,
       },
       {
-        path: `/studentprofile/:student_id`, 
+        path: `/studentprofile/:student_id`,
         element: <StudentProfile></StudentProfile>,
       },
       {
@@ -79,8 +80,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: "manage-board",
-        element: <ManageBoard></ManageBoard>, 
+        element: <ManageBoard></ManageBoard>,
       },
+
+      {
+        path: "all_thesis",
+        element: <AllThesis></AllThesis>,
+      }
     ],
   },
   {

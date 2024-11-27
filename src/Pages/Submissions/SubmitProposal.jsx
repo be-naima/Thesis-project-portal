@@ -6,6 +6,7 @@ const SubmitProposal = () => {
     const { student_id } = useParams();
 
     const [teamName, setTeamName] = useState('');
+    const [dept, setdept] = useState('');
     const [type, setType] = useState('');
     const [title, setTitle] = useState('');
     const [abstract, setAbstract] = useState('');
@@ -18,7 +19,7 @@ const SubmitProposal = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!teamName || !type || !title || !abstract || !areaOfResearch || !pdfFile) {
+        if (!teamName || !dept || !type || !title || !abstract || !areaOfResearch || !pdfFile) {
             setError('Please fill out all fields and upload a PDF file.');
             return;
         }
@@ -27,6 +28,7 @@ const SubmitProposal = () => {
 
         const formData = new FormData();
         formData.set('teamName', teamName);
+        formData.set('dept', dept)
         formData.set('type', type);
         formData.set('title', title);
         formData.set('abstract', abstract);
@@ -164,6 +166,18 @@ const SubmitProposal = () => {
                             </div>
 
                             <div className="mb-4">
+                                <label htmlFor="dept" className="block text-gray-700 font-bold">Department</label>
+                                <input
+                                    type="text"
+                                    id="dept"
+                                    className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                                    value={dept}
+                                    onChange={(e) => setdept(e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            <div className="mb-4">
                                 <label htmlFor="type" className="block text-gray-700 font-bold">Type</label>
                                 <select
                                     id="type"
@@ -248,6 +262,18 @@ const SubmitProposal = () => {
                                     className="mt-1 p-2 w-full border border-gray-300 rounded-md"
                                     value={teamName}
                                     onChange={(e) => setTeamName(e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            <div className="mb-4">
+                                <label htmlFor="dept" className="block text-gray-700 font-bold">Department</label>
+                                <input
+                                    type="text"
+                                    id="dept"
+                                    className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                                    value={dept}
+                                    onChange={(e) => setdept(e.target.value)}
                                     required
                                 />
                             </div>

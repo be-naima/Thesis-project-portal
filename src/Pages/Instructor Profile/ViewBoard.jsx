@@ -6,17 +6,22 @@ const ViewBoard = () => {
     const [boardDetails, setBoardDetails] = useState([]);
     const [instructorName, setInstructorName] = useState()
     const { _id } = useParams()
-    useEffect(() => {
-        
-        fetch(`http://localhost:5000/board_details`)
-            .then(response => response.json())
-            .then(data => {
-                setBoardDetails(data)
-            })
-            .catch(error => {
-                console.error("Error fetching ", error);
-            });
-    }, []);
+
+
+    fetch(`http://localhost:5000/board_details`)
+        .then(response => response.json())
+        .then(data => {
+            const boards = data.map(item => item);
+            console.log(boards)
+            setBoardDetails(boards);
+            console.log(boardDetails)
+
+        })
+        .catch(error => {
+            console.error("Error fetching ", error);
+        });
+    //console.log(data2)
+
     useEffect(() => {
 
         fetch(`http://localhost:5000/instructor_details/${_id}`)
