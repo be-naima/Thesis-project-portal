@@ -17,6 +17,7 @@ import AdminLogin from "../Pages/AdminDashboard/AdminLogin";
 import ManageBoard from "../Pages/AdminDashboard/ManageBoard";
 import Board from "../Pages/Board/Board";
 import AllThesis from "../Pages/AdminDashboard/AllThesis";
+import StudentDetails from "../Pages/AdminDashboard/StudentDetails";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: "all_thesis",
         element: <AllThesis></AllThesis>,
+      },
+      {
+        path: "student_details",
+        element: <StudentDetails></StudentDetails>,
       }
     ],
   },

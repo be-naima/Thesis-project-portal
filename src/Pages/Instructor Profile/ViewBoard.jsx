@@ -8,19 +8,35 @@ const ViewBoard = () => {
     const { _id } = useParams()
 
 
-    fetch(`http://localhost:5000/board_details`)
-        .then(response => response.json())
-        .then(data => {
-            const boards = data.map(item => item);
-            console.log(boards)
-            setBoardDetails(boards);
-            console.log(boardDetails)
+    // fetch(`http://localhost:5000/board_details`)
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         const boards = data.map(item => item);
+    //         console.log(boards)
+    //         setBoardDetails(boards);
+    //         console.log(boardDetails)
 
-        })
-        .catch(error => {
-            console.error("Error fetching ", error);
-        });
+    //     })
+    //     .catch(error => {
+    //         console.error("Error fetching ", error);
+    //     });
     //console.log(data2)
+    useEffect(() => {
+        fetch(`http://localhost:5000/board_details`)
+            .then(response => response.json())
+            .then(data => {
+                const boards = data.map(item => item);
+                console.log(boards); // This will log fetched data correctly.
+                setBoardDetails(boards);
+            })
+            .catch(error => {
+                console.error("Error fetching ", error);
+            });
+    }, []); // Dependency array ensures fetch runs only once on mount.
+
+    useEffect(() => {
+        console.log(boardDetails); // Logs boardDetails whenever it updates.
+    }, [boardDetails]);
 
     useEffect(() => {
 

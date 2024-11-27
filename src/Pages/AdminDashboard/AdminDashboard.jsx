@@ -24,8 +24,8 @@ const AdminDashboard = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/admin-dashboard/student-profile" className="w-full text-left">
-                            Student Profile
+                        <Link to="/admin-dashboard/student_details" className="w-full text-left">
+                            Student Details
                         </Link>
                     </li>
                     <li>
