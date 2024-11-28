@@ -18,6 +18,8 @@ import SubmitDefence from "../Pages/Submissions/SubmitDefence";
 import SupervisorAssign from "../Pages/AdminDashboard/SupervisorAssign";
 import ManageBoard from "../Pages/AdminDashboard/ManageBoard";
 import Board from "../Pages/Board/Board";
+import AllThesis from "../Pages/AdminDashboard/AllThesis";
+import StudentDetails from "../Pages/AdminDashboard/StudentDetails";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
         element: <PreviousThesis></PreviousThesis>,
       },
       {
-        path: `/studentprofile/:student_id`, 
+        path: `/studentprofile/:student_id`,
         element: <StudentProfile></StudentProfile>,
       },
       {
@@ -85,11 +87,20 @@ const router = createBrowserRouter([
       },
       {
         path: "manage-board",
-        element: <ManageBoard></ManageBoard>, 
+        element: <ManageBoard></ManageBoard>,
       },
       {
         path: "board",
-        element: <Board></Board>,
+        element: <Board></Board>
+      },
+
+      {
+        path: "all_thesis",
+        element: <AllThesis></AllThesis>,
+      },
+      {
+        path: "student_details",
+        element: <StudentDetails></StudentDetails>,
       }
     ],
   },

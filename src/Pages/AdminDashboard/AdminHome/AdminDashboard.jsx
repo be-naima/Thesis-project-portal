@@ -28,8 +28,8 @@ const AdminDashboard = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/admin-dashboard/student-profile" className="w-full text-left">
-                            Student Profile
+                        <Link to="/admin-dashboard/student_details" className="w-full text-left">
+                            Student Details
                         </Link>
                     </li>
                     <li>
@@ -38,7 +38,7 @@ const AdminDashboard = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/admin-dashboard/all-thesis" className="w-full text-left">
+                        <Link to="/admin-dashboard/all_thesis" className="w-full text-left">
                             All Thesis
                         </Link>
                     </li>
