@@ -48,7 +48,7 @@ const PersonalDetails = () => {
                 <p className="py-2 border-b border-gray-300"><strong>Name:</strong> {instructorProfile.name}</p>
                 <p className="py-2 border-b border-gray-300"><strong>Designation:</strong> {instructorProfile.designation}</p>
                 <p className="py-2 border-b border-gray-300"><strong>Qualification:</strong> {instructorProfile.qualification.join(", ")}</p>
-                <p className="py-2 border-b border-gray-300"><strong>Department:</strong> {instructorProfile.dept}</p>
+                <p className="py-2 border-b border-gray-300"><strong>Department:</strong> {instructorProfile.department}</p>
                 <p className="py-2 border-b border-gray-300"><strong>Email:</strong> {instructorProfile.email}</p>
                 <p className="py-2 border-b border-gray-300"><strong>Phone Number:</strong> {instructorProfile.phone}</p>
             </div>

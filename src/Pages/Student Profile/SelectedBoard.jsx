@@ -30,6 +30,7 @@ const SelectedBoard = () => {
   if (!thesisDetail) {
     return <div className="p-4">No thesis details found for this student ID.</div>;
   }
+  
 
   const {
     proposal_board = "Pending",
