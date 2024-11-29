@@ -7,7 +7,7 @@ const MyProgress = () => {
     console.log(student_id)
     const [existingTeam, setExistingTeam] = useState([])
     const [board, setBoard] = useState(null);
-    const [boardStatus, setBoardStatus] = useState({});
+    
     useEffect(() => {
         fetch(`http://localhost:5000/thesis_details/${student_id}`)
             .then(response => response.json())
@@ -19,7 +19,7 @@ const MyProgress = () => {
                 console.error('Error fetching data:', error);
             });
     }, [student_id]);
-    console.log(existingTeam)
+    console.log(existingTeam.title)
 
     useEffect(() => {
         fetch('http://localhost:5000/board_details')
@@ -28,7 +28,10 @@ const MyProgress = () => {
             .catch(error => console.error('Error fetching board details:', error));
     }, []);
 
+    const title = existingTeam?.title; 
+    const boardStatus = board?.[0]?.status[title]; 
 
+   
 
     return (
         <div>
@@ -65,12 +68,9 @@ const MyProgress = () => {
                         </span>
                     </p>
                     <p className='mb-2'><strong>Supervisor Feedback :</strong> {existingTeam && existingTeam.proposal_feedback_sup} </p>
-                    <p className='mb-2 text-green-600 font-bold'><strong className='text-black font-bold'>Board Decision: </strong>{ }</p>
+                    <p className='mb-2 text-green-600 font-bold'><strong className='text-black font-bold'>Board Decision: </strong>{boardStatus ? boardStatus.proposal_boardstatus : 'Pending'}</p>
                     
-                    <p className='mb-2'><strong>Board Feedback : </strong>The project shows strong potential. Consider adding more features and improving user interactivity for a more seamless experience.</p>
-
-
-
+                    
                 </div>
             </div>
 
@@ -106,8 +106,8 @@ const MyProgress = () => {
                         </span>
                     </p>
                     <p className='mb-2'><strong>Supervisor Feedback :</strong> {existingTeam && existingTeam.pre_defense_feedback_sup} </p>
-                    <p className='mb-2 text-green-600 font-bold'><strong className='text-black font-bold'>Board Decision: </strong>Accepted</p>
-                    <p className='mb-2'><strong>Board Feedback: </strong>The project is progressing well. Enhancing the user interface and adding additional functionalities could further improve its impact.</p>
+                    <p className='mb-2 text-green-600 font-bold'><strong className='text-black font-bold'>Board Decision: </strong>{boardStatus ? boardStatus.preDefense_boardstatus : 'Pending'}</p>
+                   
 
 
                 </div>
@@ -145,8 +145,8 @@ const MyProgress = () => {
                         </span>
                     </p>
                     <p className='mb-2'><strong>Supervisor Feedback :</strong> {existingTeam &&  existingTeam.defence_feedback_sup} </p>
-                    <p className='mb-2 text-green-600 font-bold'><strong className='text-black font-bold'>Board Decision: </strong>Accepted</p>
-                    <p className='mb-2'><strong>Board Feedback: </strong>The project is progressing well. Enhancing the user interface and adding additional functionalities could further improve its impact.</p>
+                    <p className='mb-2 text-green-600 font-bold'><strong className='text-black font-bold'>Board Decision: </strong>{boardStatus ? boardStatus.defense_boardstatus : 'Pending'}</p>
+                    
 
 
                 </div>

@@ -34,19 +34,22 @@ const StudentDetails = () => {
             .catch(error => console.error('Error fetching board data:', error));
         }, []);
         
-        console.log(boardDetails);
+        console.log(boardDetails)
    
         const handleViewDetails = (item) => {
+            console.log(thesisInfo[0].title);
         const matchingBoard = boardDetails.find(board =>
             board.thesis.includes(thesisInfo[0].title)
+            
         );
 
+        console.log(matchingBoard)
         // Extract the proposal board status for the specific title
         const proposalboardStatus = matchingBoard?.status?.[thesisInfo[0].title]?.proposal_boardstatus || 'Not Available';
         const predefboardStatus = matchingBoard?.status?.[thesisInfo[0].title]?.preDefense_boardstatus || 'Not Available';
         const defboardStatus = matchingBoard?.status?.[thesisInfo[0].title]?.defense_boardstatus || 'Not Available';
 
-        console.log(item)
+       
        
             fetch(`http://localhost:5000/thesis_details/${item}`)
                 .then(response => response.json())
@@ -70,7 +73,7 @@ const StudentDetails = () => {
                     : `<span style="color: red;">Not Submitted</span>`
                 }</p>
       <p><strong>Proposal Supervisor Status:</strong> ${thesisInfo[0].proposal_status}</p>
-      <p><strong>Proposal Board Status:</strong> ${proposalboardStatus}</p>
+      <p><strong>Proposal Board Status:</strong>${proposalboardStatus}</p>
 
       <p><strong>Pre-defence:</strong> ${thesisInfo[0].pre_defence
                     ? `<a href="http://localhost:5000/files/${thesisInfo[0].pre_defence}" 
@@ -82,7 +85,7 @@ const StudentDetails = () => {
                     : `<span style="color: red;">Not Submitted</span>`
                 }</p>
       <p><strong>Pre-defence Supervisor Status:</strong> ${thesisInfo[0].pre_defense_status}</p>
-      <p><strong>Pre-defence Board Status:</strong> ${predefboardStatus}</p>
+      <p><strong>Pre-defence Board Status:</strong>${predefboardStatus} </p>
 
 
       <p><strong>Defence:</strong> ${thesisInfo[0].defence
@@ -95,7 +98,7 @@ const StudentDetails = () => {
                     : `<span style="color: red;">Not Submitted</span>`
                 }</p>
       <p><strong>Defence Supervisor Status:</strong> ${thesisInfo[0].defense_status}</p>
-      <p><strong>Defence Board Status:</strong> ${defboardStatus}</p>
+      <p><strong>Defence Board Status:</strong>${defboardStatus} </p>
 
 
     </div>`,
