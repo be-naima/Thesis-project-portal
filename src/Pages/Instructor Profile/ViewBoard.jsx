@@ -6,6 +6,7 @@ const ViewBoard = () => {
 
     const [instructorName, setInstructorName] = useState()
     const { _id } = useParams()
+   
     const BoardDetailRef = useRef([]);
 
     const [boardDetails, setBoardDetails] = useState([]);
@@ -107,6 +108,8 @@ const ViewBoard = () => {
     const matchingDefenseMembers = matchingDefenseBoard?.members || [];
     const matchingDefenseBoardName = matchingDefenseBoard?.boardName;
 
+    const id=matchingProposalBoard?.link.split('/').pop();
+
     const getStatusTextColor = (status) => {
         switch (status) {
             case "Accepted":
@@ -173,7 +176,7 @@ const ViewBoard = () => {
                                         <div className="text-center">
                                             <div className="text-center">
                                                 <a
-                                                    href={matchingProposalLinks}
+                                                    href={`/board/${id}`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="btn btn-primary btn-sm bg-purple-600 hover:bg-purple-700 text-white font-bold py-1 px-4 rounded"
@@ -232,7 +235,7 @@ const ViewBoard = () => {
                                         <div className="text-center">
                                             <div className="text-center">
                                                 <a
-                                                    href={matchingPreDefenseLinks}
+                                                    href={`/board/${id}`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="btn btn-primary btn-sm bg-purple-600 hover:bg-purple-700 text-white font-bold py-1 px-4 rounded"
@@ -290,7 +293,7 @@ const ViewBoard = () => {
                                         <div className="text-center">
                                             <div className="text-center">
                                                 <a
-                                                    href={matchingDefenseLinks}
+                                                    href={`/board/${id}`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="btn btn-primary btn-sm bg-purple-600 hover:bg-purple-700 text-white font-bold py-1 px-4 rounded"

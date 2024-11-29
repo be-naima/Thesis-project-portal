@@ -60,6 +60,7 @@ const SelectedBoard = () => {
         const data = await response.json();
         BoardDetailRef.current = data;
         setBoardDetail(data);
+        console.log(boardDetail);
       } catch (error) {
         console.error("Error fetching thesis details:", error);
       } finally {
@@ -120,7 +121,7 @@ const SelectedBoard = () => {
       <h2 className="text-xl font-bold mb-4 text-center text-purple-800">Selected Board</h2>
       <div className="mt-4">
         <div className="bg-white text-black p-4 rounded-lg shadow-md mb-4">
-          <strong>Proposal Board:</strong>{" "}
+          <strong>Proposal Board:</strong>{""}
 
           {boardDetail && boardDetail.type === "Proposal" ? (
             <span className="font-bold text-green-600">{boardDetail.boardName}</span>

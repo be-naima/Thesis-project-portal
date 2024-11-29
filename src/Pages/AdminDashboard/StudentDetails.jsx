@@ -5,7 +5,7 @@ import { FaSearch, FaFilter } from 'react-icons/fa';
 const StudentDetails = () => {
     const [thesisData, setThesisData] = useState([]);
     const [thesisInfo, setThesisInfo] = useState([]);
-
+    const [boardDetails, setBoardDetails] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedDept, setSelectedDept] = useState(null);
     const [selectedType, setSelectedType] = useState(null);
@@ -27,8 +27,25 @@ const StudentDetails = () => {
             .then(data => setStudentDetails(data))
             .catch(error => console.error('Error fetching data:', error));
     }, []);
-    
-    const handleViewDetails = (item) => {
+    useEffect(() => {
+    fetch('http://localhost:5000/board_details')
+            .then(response => response.json())
+            .then(data => setBoardDetails(data)) // Set board details here
+            .catch(error => console.error('Error fetching board data:', error));
+        }, []);
+        
+        console.log(boardDetails);
+   
+        const handleViewDetails = (item) => {
+        const matchingBoard = boardDetails.find(board =>
+            board.thesis.includes(thesisInfo[0].title)
+        );
+
+        // Extract the proposal board status for the specific title
+        const proposalboardStatus = matchingBoard?.status?.[thesisInfo[0].title]?.proposal_boardstatus || 'Not Available';
+        const predefboardStatus = matchingBoard?.status?.[thesisInfo[0].title]?.preDefense_boardstatus || 'Not Available';
+        const defboardStatus = matchingBoard?.status?.[thesisInfo[0].title]?.defense_boardstatus || 'Not Available';
+
         console.log(item)
        
             fetch(`http://localhost:5000/thesis_details/${item}`)
@@ -53,7 +70,7 @@ const StudentDetails = () => {
                     : `<span style="color: red;">Not Submitted</span>`
                 }</p>
       <p><strong>Proposal Supervisor Status:</strong> ${thesisInfo[0].proposal_status}</p>
-      <p><strong>Proposal Board Status:</strong> Accpted</p>
+      <p><strong>Proposal Board Status:</strong> ${proposalboardStatus}</p>
 
       <p><strong>Pre-defence:</strong> ${thesisInfo[0].pre_defence
                     ? `<a href="http://localhost:5000/files/${thesisInfo[0].pre_defence}" 
@@ -64,8 +81,8 @@ const StudentDetails = () => {
              </a>`
                     : `<span style="color: red;">Not Submitted</span>`
                 }</p>
-      <p><strong>Pre-defencel Supervisor Status:</strong> ${thesisInfo[0].pre_defense_status}</p>
-      <p><strong>Pre-defencel Board Status:</strong> Accpted</p>
+      <p><strong>Pre-defence Supervisor Status:</strong> ${thesisInfo[0].pre_defense_status}</p>
+      <p><strong>Pre-defence Board Status:</strong> ${predefboardStatus}</p>
 
 
       <p><strong>Defence:</strong> ${thesisInfo[0].defence
@@ -77,8 +94,8 @@ const StudentDetails = () => {
              </a>`
                     : `<span style="color: red;">Not Submitted</span>`
                 }</p>
-      <p><strong>Defencel Supervisor Status:</strong> ${thesisInfo[0].defense_status}</p>
-      <p><strong>Defencel Board Status:</strong> Accpted</p>
+      <p><strong>Defence Supervisor Status:</strong> ${thesisInfo[0].defense_status}</p>
+      <p><strong>Defence Board Status:</strong> ${defboardStatus}</p>
 
 
     </div>`,

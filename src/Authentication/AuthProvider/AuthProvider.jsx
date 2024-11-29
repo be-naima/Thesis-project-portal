@@ -37,16 +37,17 @@ const AuthProvider = ({ children }) => {
                 const studentId = currentUser.email.split('@')[0].toUpperCase();
                 setUser({
                     ...currentUser,
-                    displayName: currentUser.displayName || studentId, 
-                    student_id: studentId, 
-                    
+                    displayName: currentUser.displayName || studentId,
+                    student_id: studentId,
+
                 });
             } else {
                 setUser(null);
             }
-            
+            setLoading(false);
+
         });
-        
+
         return () => {
             unSubscribe();
         }

@@ -6,6 +6,8 @@ const MyProgress = () => {
     const { student_id } = useParams();
     console.log(student_id)
     const [existingTeam, setExistingTeam] = useState([])
+    const [board, setBoard] = useState(null);
+    const [boardStatus, setBoardStatus] = useState({});
     useEffect(() => {
         fetch(`http://localhost:5000/thesis_details/${student_id}`)
             .then(response => response.json())
@@ -18,6 +20,16 @@ const MyProgress = () => {
             });
     }, [student_id]);
     console.log(existingTeam)
+
+    useEffect(() => {
+        fetch('http://localhost:5000/board_details')
+            .then(response => response.json())
+            .then(data => setBoard(data))
+            .catch(error => console.error('Error fetching board details:', error));
+    }, []);
+
+
+
     return (
         <div>
             <h2 className="text-xl font-bold text-purple-800 mb-5 text-center">My Progress</h2>
@@ -53,7 +65,8 @@ const MyProgress = () => {
                         </span>
                     </p>
                     <p className='mb-2'><strong>Supervisor Feedback :</strong> {existingTeam && existingTeam.proposal_feedback_sup} </p>
-                    <p className='mb-2 text-green-600 font-bold'><strong className='text-black font-bold'>Board Decision: </strong>Accepted</p>
+                    <p className='mb-2 text-green-600 font-bold'><strong className='text-black font-bold'>Board Decision: </strong>{ }</p>
+                    
                     <p className='mb-2'><strong>Board Feedback : </strong>The project shows strong potential. Consider adding more features and improving user interactivity for a more seamless experience.</p>
 
 

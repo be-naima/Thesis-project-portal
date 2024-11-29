@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { FaCheck, FaX } from 'react-icons/fa6';
 
+
 const Board = () => {
     const [thesisDetails, setThesisDetails] = useState([]);
     const [detailedTheses, setDetailedTheses] = useState([]);
@@ -80,8 +81,8 @@ const Board = () => {
     };
 
     return (
-        <div className='overflow-x-auto'>
-            <table className="table-auto w-full border">
+        <div className='overflow-x-auto bg-gray-100 pt-40 mb-26 p-4'>
+            <table className="min-w-full bg-white border border-gray-200 ">
                 <thead>
                     <tr className="bg-purple-500 text-white">
                         <th rowSpan="2" className="border px-6 py-2">SL</th>

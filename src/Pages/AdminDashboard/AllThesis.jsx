@@ -9,6 +9,7 @@ const AllThesis = () => {
     const [selectedType, setSelectedType] = useState(null);
     const [showDeptDropdown, setShowDeptDropdown] = useState(false);
     const [showTypeDropdown, setShowTypeDropdown] = useState(false);
+    const [boardDetails, setBoardDetails] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 7;
 
@@ -17,9 +18,23 @@ const AllThesis = () => {
             .then(response => response.json())
             .then(data => setThesisData(data))
             .catch(error => console.error('Error fetching data:', error));
+
+        fetch('http://localhost:5000/board_details')
+            .then(response => response.json())
+            .then(data => setBoardDetails(data)) // Set board details here
+            .catch(error => console.error('Error fetching board data:', error));
     }, []);
 
     const handleViewDetails = (item) => {
+
+        const matchingBoard = boardDetails.find(board =>
+            board.thesis.includes(item.title)
+        );
+
+        // Extract the proposal board status for the specific title
+        const proposalboardStatus = matchingBoard?.status?.[item.title]?.proposal_boardstatus || 'Not Available';
+        const predefboardStatus = matchingBoard?.status?.[item.title]?.preDefense_boardstatus || 'Not Available';
+        const defboardStatus = matchingBoard?.status?.[item.title]?.defense_boardstatus || 'Not Available';
         Swal.fire({
             title: item.title,
             html: ` <div style="text-align: left;">
@@ -37,7 +52,7 @@ const AllThesis = () => {
                     : `<span style="color: red;">Not Submitted</span>`
                 }</p>
       <p><strong>Proposal Supervisor Status:</strong> ${item.proposal_status}</p>
-      <p><strong>Proposal Board Status:</strong> Accpted</p>
+      <p><strong>Proposal Board Status:</strong>${proposalboardStatus} </p>
 
       <p><strong>Pre-defence:</strong> ${item.pre_defence
                     ? `<a href="http://localhost:5000/files/${item.pre_defence}" 
@@ -49,7 +64,7 @@ const AllThesis = () => {
                     : `<span style="color: red;">Not Submitted</span>`
                 }</p>
       <p><strong>Pre-defencel Supervisor Status:</strong> ${item.pre_defense_status}</p>
-      <p><strong>Pre-defencel Board Status:</strong> Accpted</p>
+      <p><strong>Pre-defence Board Status:</strong>${predefboardStatus} </p>
 
 
       <p><strong>Defence:</strong> ${item.defence
@@ -61,8 +76,8 @@ const AllThesis = () => {
              </a>`
                     : `<span style="color: red;">Not Submitted</span>`
                 }</p>
-      <p><strong>Defencel Supervisor Status:</strong> ${item.defense_status}</p>
-      <p><strong>Defencel Board Status:</strong> Accpted</p>
+      <p><strong>Defence Supervisor Status:</strong> ${item.defense_status}</p>
+      <p><strong>Defence Board Status:</strong>${defboardStatus} </p>
 
 
     </div>`,

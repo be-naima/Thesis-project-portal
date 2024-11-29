@@ -20,6 +20,7 @@ import ManageBoard from "../Pages/AdminDashboard/ManageBoard";
 import Board from "../Pages/Board/Board";
 import AllThesis from "../Pages/AdminDashboard/AllThesis";
 import StudentDetails from "../Pages/AdminDashboard/StudentDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -43,16 +44,29 @@ const router = createBrowserRouter([
         element: <InstructorProfile></InstructorProfile>,
       },
       {
+        path: "board/:id",
+        element: <PrivateRoute>
+          <Board></Board>
+        </PrivateRoute>,
+      },
+
+      {
         path: `/submitproposal/:student_id`,
-        element: <SubmitProposal></SubmitProposal>,
+        element: <PrivateRoute>
+          <SubmitProposal></SubmitProposal>
+        </PrivateRoute>,
       },
       {
         path: `/submitpre_defence/:student_id`,
-        element: <SubmitPreDefence></SubmitPreDefence>,
+        element: <PrivateRoute>
+          <SubmitPreDefence></SubmitPreDefence>
+        </PrivateRoute>,
       },
       {
         path: `/submit_defence/:student_id`,
-        element: <SubmitDefence></SubmitDefence>,
+        element: <PrivateRoute>
+          <SubmitDefence></SubmitDefence>
+        </PrivateRoute>,
       },
       {
         path: "/login",
@@ -67,11 +81,15 @@ const router = createBrowserRouter([
         children: [
           {
             path: `select-supervisor/:student_id`,
-            element: <SelectSupervisor></SelectSupervisor>,
+            element: <PrivateRoute>
+              <SelectSupervisor></SelectSupervisor>
+            </PrivateRoute>,
           },
           {
             path: "/supervisors/my-supervisor/:student_id",
-            element: <MySupervisor></MySupervisor>,
+            element: <PrivateRoute>
+              <MySupervisor></MySupervisor>
+            </PrivateRoute>,
           },
         ],
       },
@@ -79,20 +97,19 @@ const router = createBrowserRouter([
   },
   {
     path: "admin-dashboard",
-    element: <AdminDashboard></AdminDashboard>,
+    element: <PrivateRoute>
+      <AdminDashboard></AdminDashboard>
+    </PrivateRoute>,
     children: [
       {
         path: "assign-supervisor",
-        element: <SupervisorAssign></SupervisorAssign> 
+        element: <SupervisorAssign></SupervisorAssign>
       },
       {
         path: "manage-board",
         element: <ManageBoard></ManageBoard>,
       },
-      {
-        path: "board",
-        element: <Board></Board>
-      },
+
 
       {
         path: "all_thesis",
