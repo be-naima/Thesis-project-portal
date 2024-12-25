@@ -20,3 +20,4 @@ This is basically a team project. This platform is designed to manage our univer
 
 # Demo
 Check out the demo video here.
+- You Tube link: https://www.youtube.com/watch?v=P4b_PNZirGs
