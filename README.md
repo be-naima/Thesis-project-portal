@@ -1,6 +1,6 @@
 # Thesis/Project Web Portal
 
-A comprehensive web-based platform designed to manage the university thesis and project defense process through online. The portal streamlines supervisor selection, proposal, pre-defense and defense submission and grading processes while providing role-specific functionalities for students, instructors, and administrators with much more features.
+This is basically a team project. This platform is designed to manage our university(IIUC) thesis and project defense process through online. The portal streamlines supervisor selection, proposal, pre-defense and defense submission and grading processes while providing role-specific functionalities for students, instructors, and administrators with much more fuctionalities. 
 
 # Features
 ### 1. **Student** 
