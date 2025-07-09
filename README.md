@@ -21,3 +21,12 @@ This is basically a team project. This platform is designed to manage our univer
 # Demo
 Check out the demo video here.
 - You Tube link: https://www.youtube.com/watch?v=P4b_PNZirGs
+
+## 👥 Contributors
+
+<a href="https://github.com/be-naima">
+  <img src="https://avatars.githubusercontent.com/u/145076723?v=4" width="40" />
+</a>
+<a href="https://github.com/NirjanaBarua">
+  <img src="https://avatars.githubusercontent.com/u/110869452?v=4" width="40" />
+</a>
