@@ -22,7 +22,7 @@ This is basically a team project. This platform is designed to manage our univer
 Check out the demo video here.
 - You Tube link: https://www.youtube.com/watch?v=P4b_PNZirGs
 
-## 👥 Contributors
+# 👥 Contributors
 
-- Naima Fardous - [@be-naima](https://github.com/be-naima)
-- Nirjana Barua - [@NirjanaBarua](https://github.com/NirjanaBarua)
+- **Naima Fardous** - [@be-naima](https://github.com/be-naima)
+- **Nirjana Barua** - [@NirjanaBarua](https://github.com/NirjanaBarua)
