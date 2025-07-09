@@ -24,9 +24,5 @@ Check out the demo video here.
 
 ## 👥 Contributors
 
-<a href="https://github.com/be-naima">
-  <img src="https://avatars.githubusercontent.com/u/145076723?v=4" width="40" />
-</a>
-<a href="https://github.com/NirjanaBarua">
-  <img src="https://avatars.githubusercontent.com/u/110869452?v=4" width="40" />
-</a>
+- Naima Fardous - [@be-naima](https://github.com/be-naima)
+- Nirjana Barua - [@NirjanaBarua](https://github.com/NirjanaBarua)
