@@ -1,5 +1,7 @@
 # Thesis/Project Web Portal
 
+# Description
+
 This is basically a team project. This platform is designed to manage our university(IIUC) thesis and project defense process through online. The portal streamlines supervisor selection, proposal, pre-defense and defense submission and grading processes while providing role-specific functionalities for students, instructors, and administrators with much more fuctionalities. 
 
 # Features
@@ -20,7 +22,7 @@ This is basically a team project. This platform is designed to manage our univer
 
 # Demo
 Check out the demo video here.
-- You Tube link: https://www.youtube.com/watch?v=P4b_PNZirGs
+- You Tube link: https://www.youtube.com/watch?v=CPBWcRkl2Wg&t=6s
 
 # 👥 Contributors
 
